@@ -1,7 +1,5 @@
 package com.example.springhw.model;
 
-import lombok.*;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -17,23 +15,23 @@ public class House {
     private List<Owner> owners;
 
     @OneToMany(mappedBy = "house")
-    private List<Leaseholder> leaseholders;
+    private List<Tenant> tenants;
 
     public House(String address) {
         this.address = address;
     }
 
-    public House(Long id, String address, List<Owner> owners, List<Leaseholder> leaseholders) {
+    public House(Long id, String address, List<Owner> owners, List<Tenant> tenants) {
         this.id = id;
         this.address = address;
         this.owners = owners;
-        this.leaseholders = leaseholders;
+        this.tenants = tenants;
     }
 
-    public House(String address, List<Owner> owners, List<Leaseholder> leaseholders) {
+    public House(String address, List<Owner> owners, List<Tenant> tenants) {
         this.address = address;
         this.owners = owners;
-        this.leaseholders = leaseholders;
+        this.tenants = tenants;
     }
 
     public House() {
