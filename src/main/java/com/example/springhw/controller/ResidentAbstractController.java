@@ -14,6 +14,8 @@ import java.util.List;
 //@RequestMapping("/api")
 /**
  * Kodel extendinant abstract class, neextendinasi "/api" @RequestMapping ir adresas lieka be jo?
+ *
+ * Kaip teisingai apsirasyti abstract  metodus????
  */
 public abstract class ResidentAbstractController {
 
