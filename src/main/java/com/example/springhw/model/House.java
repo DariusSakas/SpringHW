@@ -1,6 +1,7 @@
 package com.example.springhw.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,11 +20,11 @@ public class House {
     private Long id;
     private String address;
 
-    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Owner> owners;
 
-    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Tenant> tenants;
 

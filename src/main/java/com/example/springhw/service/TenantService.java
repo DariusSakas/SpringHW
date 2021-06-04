@@ -14,7 +14,6 @@ public class TenantService {
     private final TenantRepo tenantRepo;
 
     public List<Tenant> getAllTenants(){
-        List<Tenant> tenants = tenantRepo.findAll();
-        return tenants;
+        return tenantRepo.findAll();
     }
 }

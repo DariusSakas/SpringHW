@@ -5,6 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 
 @MappedSuperclass
+@Getter
+@Setter
+@Data
 public abstract class Resident {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +16,7 @@ public abstract class Resident {
     private String commentSubject;
     private String commentText;
     private Integer flatNumber;
+
     @ManyToOne
     @JoinColumn(name = "house_id")
     private House house;
@@ -28,10 +32,12 @@ public abstract class Resident {
     public Resident() {
     }
 
-    public Resident(String name, String commentSubject, String commentText, Integer flatNumber) {
+    public Resident(Long id, String name, String commentSubject, String commentText, Integer flatNumber, House house) {
+        this.id = id;
         this.name = name;
         this.commentSubject = commentSubject;
         this.commentText = commentText;
         this.flatNumber = flatNumber;
+        this.house = house;
     }
 }

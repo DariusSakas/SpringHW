@@ -17,7 +17,7 @@ import java.util.List;
 public class HouseController {
     private final HouseService houseService;
 
-    @GetMapping
+    @GetMapping("/")
     public List<House> getAllHouses(){
         log.info("Fethcing all HOUSES from DB");
         return houseService.getAllHouses();

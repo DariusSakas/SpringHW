@@ -10,10 +10,10 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class HouseService {
+
     private final HouseRepo houseRepo;
 
     public List<House> getAllHouses(){
-        List<House> houses = houseRepo.findAll();
-        return houses;
+        return houseRepo.findAll();
     }
 }
