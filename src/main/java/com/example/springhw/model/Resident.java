@@ -14,6 +14,7 @@ public abstract class Resident {
     private String commentText;
     private Integer flatNumber;
     @ManyToOne
+    @JoinColumn(name = "house_id")
     private House house;
 
     public Resident(String name, String commentSubject, String commentText, Integer flatNumber, House house) {

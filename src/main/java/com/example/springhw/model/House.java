@@ -1,9 +1,17 @@
 package com.example.springhw.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@Table(name = "house")
 public class House {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,10 +19,12 @@ public class House {
     private Long id;
     private String address;
 
-    @OneToMany(mappedBy = "house")
+    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Owner> owners;
 
-    @OneToMany(mappedBy = "house")
+    @OneToMany(mappedBy = "house", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Tenant> tenants;
 
     public House(String address) {
