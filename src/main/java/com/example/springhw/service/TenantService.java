@@ -1,6 +1,7 @@
 package com.example.springhw.service;
 
 import com.example.springhw.model.Owner;
+import com.example.springhw.model.Resident;
 import com.example.springhw.model.Tenant;
 import com.example.springhw.repository.TenantRepo;
 import lombok.AllArgsConstructor;
@@ -15,5 +16,9 @@ public class TenantService {
 
     public List<Tenant> getAllTenants(){
         return tenantRepo.findAll();
+    }
+
+    public Resident getTenantsById(Long id) {
+       return tenantRepo.findById(id).get();
     }
 }

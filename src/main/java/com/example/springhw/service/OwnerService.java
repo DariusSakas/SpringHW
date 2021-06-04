@@ -1,6 +1,7 @@
 package com.example.springhw.service;
 
 import com.example.springhw.model.Owner;
+import com.example.springhw.model.Resident;
 import com.example.springhw.repository.OwnerRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,4 +18,7 @@ public class OwnerService {
         return ownerRepo.findAll();
     }
 
+    public Owner getOwnersById(Long id) {
+       return ownerRepo.findById(id).get();
+    }
 }
